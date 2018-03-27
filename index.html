@@ -106,7 +106,7 @@
         </p>
       </div>
     </main>
-    <section>
+    <section class="skill">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>HTML 5 &amp; CSS 3
@@ -141,20 +141,40 @@
         </li>
       </ol>
     </section>
-    <section>
+    <section class="Portfolio">
       <h2>作品集</h2>
       <nav>
-        <ol>
-          <li>所有</li>
-          <li>框架</li>
-          <li>原生JS&amp;CSS</li>
+        <ol class="clearfix">
+          <li id="PAll">所有</li>
+          <li id="PFram">框架</li>
+          <li id="PVal">原生JS&amp;CSS</li>
         </ol>
+        <div id="unknowbar" class="bar state-1">
+          <div class="bar-inner">
+          </div>
+        </div>
       </nav>
-
-      <div class="jobs">
-        <div class="big"></div>
-        <div class="small"></div>
-        <div class="small"></div>
+      <script>
+      PAll.onclick=function(){
+        unknowbar.className = 'bar state-1'
+      }
+      PFram.onclick=function(){
+        unknowbar.className = 'bar state-2'
+      }
+      PVal.onclick=function(){
+        unknowbar.className = 'bar state-3'
+      }
+      </script>
+      <div class="Projects" style="height: 597px;">
+        <div class="big" style="top:0;left: 0;">
+          <img src="./img/1.jpg" alt="Project1" style="height: 589px;">
+        </div>
+        <div class="small" style="top: 0; left: 639px;">
+          <img src="./img/2.jpg" alt="Project2" style="height: 283px;">
+        </div>
+        <div class="small"style="top: 306px; left: 639px;">
+          <img src="./img/3.jpg" alt="Project3" style="height: 283px;">
+        </div>
       </div>
     </section>
   </body>

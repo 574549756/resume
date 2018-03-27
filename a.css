@@ -35,7 +35,7 @@ hr{
     padding-bottom: 20px;
     padding-left: 0px;
     padding-right: 0px;
-    position: fixed;
+    position: fixed;  //指定导航条一直待在顶部（无论滚动到什么位置）
     top: 0;
     left: 0;
     width: 100%;
@@ -230,7 +230,7 @@ p.crap{
     display: block;
     text-align: center;
     font-size: 20px;
-    padding: 0 0 85px 0;
+    padding: 0;
 }
 section>h2{
     display: block;
@@ -248,6 +248,7 @@ section>ol{
     margin-left: auto;
     margin-right: auto;
     padding: 25px 0px 45px 0;
+    margin-top: 30px;
 }
 section>ol:hover{
     box-shadow: 4px 4px 17px 1px rgba(0, 0, 0, 0.3);
@@ -300,4 +301,77 @@ section>ol>li .process .rank6{
     height: 100%;
     width: 30%;
     border-radius: 2px;s
+}
+section.skill >h2 ,
+section.Portfolio >h2{
+    text-align: center;
+    color: #3d4451;
+    line-height: 1.2;
+}
+section.skill,
+section.Portfolio{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+section.Portfolio{
+    text-align: center;
+}
+section.Portfolio >nav{
+    text-align: center;
+    display:inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+}
+section.Portfolio >nav>ol{
+    display: inline-block;
+    padding:0;
+    vertical-align: top;
+    margin: 0 0;
+}
+section.Portfolio > nav >ol >li{
+    float:left;
+    font-weight: 500;
+    list-style-type: none;
+    margin-left: 40px;
+    cursor: pointer;
+}
+section.Portfolio > nav > ol > li:nth-child(1){
+    margin-left: 0;
+}
+section.Portfolio > nav .bar{
+    margin-top: 5px;
+    background-color:white;
+    display:block;
+    height: 5px;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+section.Portfolio > nav .bar-inner{
+    height: 100%;
+    background: #e6686a;
+    width: 10%;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+section.Portfolio > nav .bar.state-1 .bar-inner{
+    margin-left: 0px;
+    width: 30px;
+}
+section.Portfolio > nav .bar.state-2 .bar-inner{
+    margin-left: 73px;
+    width: 30px;
+}
+section.Portfolio > nav .bar.state-3 .bar-inner{
+    margin-left: 145px;
+    width: 90px;
+}
+section.Portfolio .Projects{
+    position: relative;
+    margin-bottom: 100px;
+}
+section.Portfolio .Projects > .big,
+section.Portfolio .Projects > .small {
+    position: absolute;
 }
