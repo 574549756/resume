@@ -44,9 +44,9 @@
                     </li>
                     <li><a href="#siteProduct">作品</a>
                         <ul class="subMenu">
-                            <li>作品1</li>
-                            <li>作品2</li>
-                            <li>作品3</li>
+                            <li>所有</li>
+                            <li>框架</li>
+                            <li>原生</li>
                         </ul>
                     </li>
                     <li><a href="#siteSkills">技能</a></li>
@@ -68,7 +68,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div id="siteAbout" class="userCard" clearfix>
+        <div data-x id="siteAbout" class="userCard" clearfix>
             <div class="pictureAndText" clearfix>
                 <div class="picture">
                     <img src="./img/Gorilla1.jpg" width=270px height=347px alt="头像">
@@ -128,7 +128,7 @@
             </p>
         </div>
     </main>
-    <section id="siteSkills" class="skill">
+    <section data-x id="siteSkills" class="skill">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>HTML 5 &amp; CSS 3
@@ -146,24 +146,24 @@
                     <div class="rank3"></div>
                 </div>
             </li>
-            <li>Vue
+            <li>Vue.js
                 <div class="process">
                     <div class="rank4"></div>
                 </div>
             </li>
-            <li>React
+            <li>React.js
                 <div class="process">
                     <div class="rank5"></div>
                 </div>
             </li>
-            <li>HTTP
+            <li>Node.js
                 <div class="process">
                     <div class="rank6"></div>
                 </div>
             </li>
         </ol>
     </section>
-    <section id="siteProduct" class="Portfolio">
+    <section data-x id="siteProduct" class="Portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -199,18 +199,49 @@
             </div>
         </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>    
     <script>
         setTimeout(function(){
                 siteWelcome.classList.remove('active')
-        },3000)
+        },1000)
+        //添加 offSet 类
+        let specialTags = document.querySelectorAll('[data-x]')
+        for(let i=0;i<specialTags.length; i++){
+            specialTags[i].classList.add('offSet')
+        }
 
+        setTimeout(function(){
+            findClosest()            
+        },1000)
         window.onscroll = function(){
             if(window.scrollY > 0){
                 topNavBar.classList.add('sticky')
             }else{
                 topNavBar.classList.remove('sticky')                
             }
+            findClosest()
         }
+        
+        function findClosest(){
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0
+            for(let i=0;i<specialTags.length;i++){
+                if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+                    minIndex = i
+                }
+            }
+            //minIndex 就是离窗口顶部最近的元素
+            specialTags[minIndex].classList.remove('offSet')
+            let tagsName = specialTags[minIndex].id
+            let nameOfA = document.querySelector('a[href="#'+tagsName+'"]')
+            let li = nameOfA.parentNode
+            let brothersAndMe = li.parentNode.children
+            for(let i=0; i<brothersAndMe.length; i++){
+                brothersAndMe[i].classList.remove('highLight')
+            }
+            li.classList.add('highLight')
+        }
+
         let liTags = document.querySelectorAll('nav.menu > ul > li')
         for(let i=0; i<liTags.length; i++){
             liTags[i].onmouseenter = function(x){
@@ -221,6 +252,12 @@
             }
         }
         let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
+
         for(let i = 0; i<aTags.length; i++){
             aTags[i].onclick = function(x){
                 x.preventDefault()          //阻止默认动作
@@ -229,7 +266,21 @@
                 let element = document.querySelector(href)
                 let rect = element.getBoundingClientRect()
                 let top = element.offsetTop
-                window.scrollTo(0,top-80)
+
+                let currentTop = window.scrollY
+                let targetTop = top - 80
+                let s = targetTop - currentTop
+                console.log(s)
+                var t = Math.abs((s/100)*300)
+                if(t>500){t = 500}
+                var coords = { y: currentTop }; //初始位置
+                var tween = new TWEEN.Tween(coords)
+                    .to({ y: targetTop}, t)  //结束位置  ， 时间
+                    .easing(TWEEN.Easing.Quadratic.InOut)
+                    .onUpdate(function () {
+                        window.scrollTo(0,coords.y)
+                    })
+                    .start();
             }
         }
     </script>

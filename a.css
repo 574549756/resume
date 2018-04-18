@@ -18,6 +18,25 @@ hr{
     border: none;
     border-top:1px solid #dedede; 
 }
+/*[data-x].active{
+    outline: 1px solid red;
+}*/
+[data-x].offSet{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
+@keyframes slideUp{
+    0%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
 .topNavBar .logo .rs{
     font-size: 30px;
     font-family: "Fredoka One";
@@ -147,7 +166,8 @@ hr{
     height: 3px;
     transition: all 0.5s linear;
 }
-.topNavBar nav>ul>li.active>a:before{
+.topNavBar nav>ul>li.active>a::before,
+.topNavBar nav>ul>li.highLight>a::before{
     content: '';
     display: block;
     position: absolute;
@@ -327,6 +347,14 @@ section>ol>li .process{
     width: 100%;
     background-color:rgba(232, 103, 107, 0.3);
     border-radius: 2px;
+    overflow: hidden;
+}
+section.skill.offSet .process>div{
+    transform: translateX(-100%);
+}
+section.skill .process>div{
+    transform: translateX(0);
+    transition: all 1s;
 }
 section>ol>li .process .rank1{
     background-color:#e8676b;
