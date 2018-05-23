@@ -3,22 +3,12 @@
 
 <head>
     <title>张博涵的个人简历</title>
-    <link rel="stylesheet" href="./a.css">
     <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_605669_gp73ap8s7ztwqaor.js"></script>
     <style type="text/css">
-        .icon {width: 1em;height: 1em;vertical-align: -0.15em;fill: currentColor;overflow: hidden;}
-        .site-welcome{
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #888;
-            z-index: 20;
-            justify-content: center;
-            align-items: center;
-        }
-        .site-welcome.active{display: flex;}
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
+    <link rel="stylesheet" href="./a.css">
 </head>
 
 <body>
@@ -28,29 +18,42 @@
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner" clearfix>
             <a class="logo" href="#" alt="logo" style="float: left; ">
-                <span class="rs">RS</span><span class="card">card</span>
+                <span class="rs">RS</span>
+                <span class="card">card</span>
             </a>
             <nav class="menu">
                 <ul class="clearfix">
-                    <li><a href="#">其他</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">博客</a>
-                        <ul class="subMenu">
-                                <li>博客1</li>
-                                <li>博客2</li>
-                                <li>博客3</li>
-                        </ul>                    
+                    <li>
+                        <a href="#">其他</a>
                     </li>
-                    <li><a href="#siteProduct">作品</a>
+                    <li>
+                        <a href="#">联系方式</a>
+                    </li>
+                    <li>
+                        <a href="#">日历</a>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                        <ul class="subMenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#siteProduct">作品</a>
                         <ul class="subMenu">
                             <li>所有</li>
                             <li>框架</li>
                             <li>原生</li>
                         </ul>
                     </li>
-                    <li><a href="#siteSkills">技能</a></li>
-                    <li><a href="#siteAbout">关于</a></li>
+                    <li>
+                        <a href="#siteSkills">技能</a>
+                    </li>
+                    <li>
+                        <a href="#siteAbout">关于</a>
+                    </li>
                 </ul>
                 <!--<ul class="clearfix2">
                   <li><a class="EN">Other</a class="EN"></li>
@@ -75,7 +78,7 @@
                 </div>
                 <div class="text">
                     <span class="welcome">Hello
-                <span class="triangle"></span>
+                        <span class="triangle"></span>
                     </span>
                     <h1>张博涵</h1>
                     <p>入门前端学者</p>
@@ -95,28 +98,34 @@
             <footer class="media">
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-github"></use>
-          </svg></a>
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-instagram"></use>
-          </svg></a>
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-twitter"></use>
-          </svg></a>
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-weibo"></use>
-          </svg></a>
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-wechat"></use>
-          </svg></a>
+                        <use xlink:href="#icon-wechat"></use>
+                    </svg>
+                </a>
                 <a href="#">
                     <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-msnui-logo-qq"></use>
-          </svg></a>
+                        <use xlink:href="#icon-msnui-logo-qq"></use>
+                    </svg>
+                </a>
             </footer>
         </div>
         <div class="description">
@@ -124,13 +133,14 @@
                 <a class="button" href="#">Download Resume</a>
             </p>
             <p class="crap">
-                张博涵，建筑学转行互联网，平面设计在职。<br> 技能：入门前端开发、非专业平面设计、非专业插画、专业建筑方案设计。
+                张博涵，建筑学转行互联网，平面设计在职。
+                <br> 技能：入门前端开发、非专业平面设计、非专业插画、专业建筑方案设计。
             </p>
         </div>
     </main>
     <section data-x id="siteSkills" class="skill">
         <h2>技能</h2>
-        <ol class="clearfix">
+        <ol class="processBar clearfix">
             <li>HTML 5 &amp; CSS 3
                 <div class="process">
                     <div class="rank1"></div>
@@ -177,112 +187,62 @@
             </div>
         </nav>
         <script>
-            PAll.onclick = function() {
+            PAll.onclick = function () {
                 unknowbar.className = 'bar state-1'
             }
-            PFram.onclick = function() {
+            PFram.onclick = function () {
                 unknowbar.className = 'bar state-2'
             }
-            PVal.onclick = function() {
+            PVal.onclick = function () {
                 unknowbar.className = 'bar state-3'
             }
         </script>
-        <div class="Projects" style="height: 597px;">
-            <div class="big" style="top:0;left: 0;">
-                <img src="./img/1.jpg" alt="Project1" style="height: 589px;">
-            </div>
-            <div class="small" style="top: 0; left: 639px;">
-                <img src="./img/2.jpg" alt="Project2" style="height: 283px;">
-            </div>
-            <div class="small" style="top: 306px; left: 639px;">
-                <img src="./img/3.jpg" alt="Project3" style="height: 283px;">
+        <div id="mySlides">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src="./img/works/nav-page.jpg" class="swiper-slide">
+                    <img src="./img/works/canvas.jpg" class="swiper-slide">
+                    <img src="./img/works/slide.jpg" class="swiper-slide">
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+        
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        
+                <!-- If we need scrollbar -->
             </div>
         </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>    
+    <section class="message">
+        <h2>留言</h2>
+        <ol id="messageList">
+        </ol>
+        <form id="postMessageForm" class="postMessage">
+            <label for="">ID</label>
+            <input type="text" name="name">
+            <label for="">Whispers</label>
+            <input type="text" name="content" class="content">
+            <input type="submit" name="" value="提交">
+        </form>
+    </section>
+    <script src="//cdn1.lncld.net/static/js/3.6.8/av-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
+    <script src="./js/sticky-topbar.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/message.js"></script>
     <script>
-        setTimeout(function(){
-                siteWelcome.classList.remove('active')
-        },1000)
-        //添加 offSet 类
-        let specialTags = document.querySelectorAll('[data-x]')
-        for(let i=0;i<specialTags.length; i++){
-            specialTags[i].classList.add('offSet')
-        }
-
-        setTimeout(function(){
-            findClosest()            
-        },1000)
-        window.onscroll = function(){
-            if(window.scrollY > 0){
-                topNavBar.classList.add('sticky')
-            }else{
-                topNavBar.classList.remove('sticky')                
-            }
-            findClosest()
-        }
-        
-        function findClosest(){
-            let specialTags = document.querySelectorAll('[data-x]')
-            let minIndex = 0
-            for(let i=0;i<specialTags.length;i++){
-                if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-                    minIndex = i
-                }
-            }
-            //minIndex 就是离窗口顶部最近的元素
-            specialTags[minIndex].classList.remove('offSet')
-            let tagsName = specialTags[minIndex].id
-            let nameOfA = document.querySelector('a[href="#'+tagsName+'"]')
-            let li = nameOfA.parentNode
-            let brothersAndMe = li.parentNode.children
-            for(let i=0; i<brothersAndMe.length; i++){
-                brothersAndMe[i].classList.remove('highLight')
-            }
-            li.classList.add('highLight')
-        }
-
-        let liTags = document.querySelectorAll('nav.menu > ul > li')
-        for(let i=0; i<liTags.length; i++){
-            liTags[i].onmouseenter = function(x){
-                x.currentTarget.classList.add('active')
-            }
-            liTags[i].onmouseleave = function(x){
-                x.currentTarget.classList.remove('active')            
-            }
-        }
-        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-        function animate(time) {
-            requestAnimationFrame(animate);
-            TWEEN.update(time);
-        }
-        requestAnimationFrame(animate);
-
-        for(let i = 0; i<aTags.length; i++){
-            aTags[i].onclick = function(x){
-                x.preventDefault()          //阻止默认动作
-                let a = x.currentTarget
-                let href = a.getAttribute('href') //'#siteAbout'
-                let element = document.querySelector(href)
-                let rect = element.getBoundingClientRect()
-                let top = element.offsetTop
-
-                let currentTop = window.scrollY
-                let targetTop = top - 80
-                let s = targetTop - currentTop
-                console.log(s)
-                var t = Math.abs((s/100)*300)
-                if(t>500){t = 500}
-                var coords = { y: currentTop }; //初始位置
-                var tween = new TWEEN.Tween(coords)
-                    .to({ y: targetTop}, t)  //结束位置  ， 时间
-                    .easing(TWEEN.Easing.Quadratic.InOut)
-                    .onUpdate(function () {
-                        window.scrollTo(0,coords.y)
-                    })
-                    .start();
-            }
-        }
+        setTimeout(function () {
+            siteWelcome.classList.remove('active')
+        }, 1000)
     </script>
 </body>
+
 </html>

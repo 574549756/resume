@@ -65,7 +65,7 @@ hr{
     padding-bottom: 20px;
     padding-left: 0px;
     padding-right: 0px;
-    position: fixed;  //指定导航条一直待在顶部（无论滚动到什么位置）
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -321,7 +321,7 @@ section>h2{
     font-size: 37px;
     font-weight: 300;
 }
-section>ol{
+section>.processBar{
     display: block;
     text-align: left;
     border: 1px solid rgb(203, 205, 207);
@@ -332,17 +332,17 @@ section>ol{
     padding: 25px 0px 45px 0;
     margin-top: 30px;
 }
-section>ol:hover{
+section>.processBar:hover{
     box-shadow: 4px 4px 17px 1px rgba(0, 0, 0, 0.3);
     transition: 0.3s linear;
 }
-section>ol>li{
+section>.processBar>li{
     width:42%;
     display: block;
     float: left;
     margin: 20px 0px 20px 50px;
 }
-section>ol>li .process{
+section>.processBar>li .process{
     height: 5px;
     width: 100%;
     background-color:rgba(232, 103, 107, 0.3);
@@ -356,41 +356,41 @@ section.skill .process>div{
     transform: translateX(0);
     transition: all 1s;
 }
-section>ol>li .process .rank1{
+section>.processBar>li .process .rank1{
     background-color:#e8676b;
     height: 100%;
     width: 20%;
-    border-radius: 2px;s
+    border-radius: 2px;
 }
-section>ol>li .process .rank2{
-    background-color:#e8676b;
+section>.processBar>li .process .rank2{
+    background-color: #e8676b;
     height: 100%;
     width: 30%;
-    border-radius: 2px;s
+    border-radius: 2px;
 }
-section>ol>li .process .rank3{
+section>.processBar>li .process .rank3{
     background-color:#e8676b;
     height: 100%;
     width: 8%;
-    border-radius: 2px;s
+    border-radius: 2px;
 }
-section>ol>li .process .rank4{
-    background-color:#e8676b;
+section>.processBar>li .process .rank4{
+    background-color: #e8676b;
     height: 100%;
     width: 4%;
-    border-radius: 2px;s
+    border-radius: 2px;
 }
-section>ol>li .process .rank5{
+section>.processBar>li .process .rank5{
     background-color:#e8676b;
     height: 100%;
     width: 1%;
-    border-radius: 2px;s
+    border-radius: 2px;
 }
-section>ol>li .process .rank6{
+section>.processBar>li .process .rank6{
     background-color:#e8676b;
     height: 100%;
     width: 30%;
-    border-radius: 2px;s
+    border-radius: 2px;
 }
 section.skill >h2 ,
 section.Portfolio >h2{
@@ -461,7 +461,58 @@ section.Portfolio .Projects{
     position: relative;
     margin-bottom: 100px;
 }
-section.Portfolio .Projects > .big,
-section.Portfolio .Projects > .small {
-    position: absolute;
+section.Portfolio .swiper-container {
+    width: 668px;
+    height: 501px;
+}
+
+section.Portfolio .swiper-slide {
+    background: white;
+}
+.swiper-button-prev{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23e8676b'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-button-next{
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23e8676b'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-pagination-bullet-active{
+    background: #e8676b;
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+.postMessage{
+    width: 668px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.postMessage > .content{
+    width: 100%;
+}
+.postMessage > :nth-child(2){
+    margin: 0 8px;
+}
+.postMessage > :nth-child(4){
+    margin: 0 0 0 8px;
+}
+section.message{
+    margin-top: 60px;
+}
+section.message > #messageList {
+    max-width: 668px;
+    margin: 30px auto;
+    padding: 0;
+    background: #f4f4f4; 
+}
+section.message > #messageList > li{
+    padding: 16px;
+    border: 1px 0;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;    
 }
