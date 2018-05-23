@@ -13,7 +13,7 @@
         },
         // 创建数据
         save: function (name, content) {
-            var Message = AV.Object.extend('message');
+            var Message = AV.Object.extend('Message');
             var message = new Message()
             return message.save({  //Promise 对象
                 'name': name,
