@@ -1,0 +1,40 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "style-loader": "^0.21.0",
+    "sugarss": "^1.0.1"
+  },
+  "devDependencies": {
+    "i": "^0.3.6",
+    "node-sass": "^4.9.0",
+    "npm": "^6.1.0",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.3",
+    "webpack": "^3.12.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/574549756/resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/574549756/resume/issues"
+  },
+  "homepage": "https://github.com/574549756/resume#readme"
+}
